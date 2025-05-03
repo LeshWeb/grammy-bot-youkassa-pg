@@ -1,8 +1,8 @@
 import { CallbackQueryContext, InlineKeyboard } from 'grammy';
 import 'dotenv/config';
-import { MyContext } from '../types.ts';
-import { products as prod } from '../consts/products.ts';
-import { prisma } from '../prisma.ts';
+import { MyContext } from '../types';
+import { products as prod } from '../consts/products';
+import { prisma } from '../prisma';
 
 export const payments = (ctx: CallbackQueryContext<MyContext>) => {
   ctx.answerCallbackQuery();

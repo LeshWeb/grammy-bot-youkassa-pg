@@ -1,6 +1,6 @@
 import { CallbackQueryContext, InlineKeyboard } from 'grammy';
-import { prisma } from '../prisma.ts';
-import { MyContext } from '../types.ts';
+import { prisma } from '../prisma';
+import { MyContext } from '../types';
 
 export const profile = async (ctx: CallbackQueryContext<MyContext>) => {
   ctx.answerCallbackQuery();
