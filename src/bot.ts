@@ -1,14 +1,14 @@
 import 'dotenv/config';
 import { Bot, GrammyError, HttpError, InlineKeyboard } from 'grammy';
 import { hydrate } from '@grammyjs/hydrate';
-import { MyContext } from './types';
+import { MyContext } from './types.ts';
 import {
   start,
   profile,
   products,
   payments,
   telegramSuccessPaymentHandler,
-} from './commands/index';
+} from './commands/index.ts';
 
 if (!process.env.BOT_TOKEN) {
   throw new Error('BOT_TOKEN is not defined');

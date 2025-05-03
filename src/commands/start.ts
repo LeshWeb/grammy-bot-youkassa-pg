@@ -1,6 +1,6 @@
 import { InlineKeyboard } from 'grammy';
-import { prisma } from '../prisma';
-import { MyContext } from '../types';
+import { prisma } from '../prisma.ts';
+import { MyContext } from '../types.ts';
 
 export const start = async (ctx: MyContext) => {
   if (ctx.from === undefined) {

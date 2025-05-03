@@ -1,6 +1,6 @@
 import { CallbackQueryContext, InlineKeyboard } from 'grammy';
-import { MyContext } from '../types';
-import { products as prod } from '../consts/products';
+import { MyContext } from '../types.ts';
+import { products as prod } from '../consts/products.ts';
 
 export const products = (ctx: CallbackQueryContext<MyContext>) => {
   ctx.answerCallbackQuery();
