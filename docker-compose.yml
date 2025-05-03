@@ -1,0 +1,36 @@
+services:
+  bot:
+    build: .
+    container_name: pomazkov-tg-bot
+    env_file:
+      - .env
+    # Если нужно "пробросить" порт для webhook,
+    # то указываем, например: "3000:3000".
+    # В нашем случае используется long polling, так что доступ к порту не требуется,
+    # но вот пример вам на будущее:
+    ports:
+      - '3000:3000'
+    depends_on:
+      - postgres
+    networks:
+      - app-network
+
+  postgres:
+    container_name: pg
+    image: postgres:latest
+    restart: always
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    ports:
+      - '5435:5432'
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - app-network
+
+volumes:
+  pgdata:
+
+networks:
+  app-network:
